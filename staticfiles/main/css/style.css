@@ -1,0 +1,587 @@
+html{
+    scroll-behavior: smooth;
+}
+section h2{
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #111827;
+    color: white;
+}
+
+nav{
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+section{
+    text-align: center;
+    margin-top: 150px;
+}
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1100px;
+    margin:120px auto;
+    padding: 20px 60px;
+    overflow: hidden;
+}
+
+.hero-text{
+    width:55%;
+}
+
+.hero-text h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero-text h3{
+    margin-bottom:15px;
+}
+
+.hero-text p{
+    margin-bottom:25px;
+    line-height:1.7;
+}
+
+.hero-image img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2563eb;
+    display: block;
+    max-width: 100%;
+}
+
+
+button{
+    padding:12px 24px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 60px;
+}
+
+nav h2{
+    font-size:28px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:500;
+}
+.about{
+    max-width:800px;
+    margin:150px auto;
+    text-align:center;
+    padding:20px;
+}
+
+.about h2{
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.about p{
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 18px;
+}
+.skills {
+    text-align: center;
+    margin: 80px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.skills-sub {
+    color: #94a3b8;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.skill-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: default;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #2563eb;
+}
+
+.skill-card img {
+    width: 52px;
+    height: 52px;
+}
+
+.skill-card span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+/* Light mode */
+body.light-mode .skill-card {
+    background: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .skill-card span {
+    color: #0f172a;
+}
+
+/* Django icon light mode fix */
+body.light-mode .skill-card img[alt="Django"] {
+    filter: invert(1);
+}
+
+/* GitHub icon light mode fix */
+body.light-mode .skill-card img[alt="GitHub"] {
+    filter: invert(1);
+}
+.btn-primary,
+.btn-secondary{
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    margin-right:10px;
+}
+
+.btn-primary{
+    background:#2563eb;
+    color:white;
+}
+
+.btn-secondary{
+    background:white;
+    color:black;
+}
+.projects {
+    max-width: 1100px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.projects-sub {
+    color: #94a3b8;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+
+.project-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #2563eb;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-icon {
+    font-size: 2rem;
+}
+
+.github-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #0f172a;
+    color: white;
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #334155;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.github-btn:hover {
+    border-color: #2563eb;
+    background: #1e293b;
+}
+
+.github-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.project-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.project-card p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.project-tags span {
+    background: #0f172a;
+    color: #60a5fa;
+    border: 1px solid #1e3a5f;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.project-card-coming {
+    border-style: dashed;
+    opacity: 0.6;
+}
+
+/* Light mode */
+body.light-mode .project-card {
+    background: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .github-btn {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+body.light-mode .github-btn img {
+    filter: invert(1);
+}
+
+body.light-mode .project-card p {
+    color: #475569;
+}
+
+body.light-mode .project-tags span {
+    background: #eff6ff;
+    color: #2563eb;
+    border-color: #bfdbfe;
+}
+footer{
+    text-align:center;
+    padding: 20px;
+    margin-top:100px;
+    border-top:1px solid #333;
+}
+#theme-btn{
+    padding:8px 12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+.contact{
+    padding:120px 20px;
+}
+
+.contact-container{
+    max-width:700px;
+    margin:auto;
+
+    background:#111827;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    border:1px solid #334155;
+
+    box-shadow:0 0 25px rgba(37,99,235,0.2);
+
+    text-align:center;
+}
+
+.contact-container h2{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.contact-container p{
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column !important;
+    gap:18px;
+    
+}
+
+.contact-form input,
+.contact-form textarea{
+    background:#1e293b;
+
+    color:white;
+
+    border:1px solid #334155;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    font-size:16px;
+}
+
+.contact-form textarea{
+    height:150px;
+    resize:none;
+}
+
+.contact-form button{
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    transform:translateY(-3px);
+}
+/* ── Light Mode ── */
+body.light-mode {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+body.light-mode nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+body.light-mode nav a {
+    color: #0f172a;
+}
+
+body.light-mode .project-card {
+    background: #e2e8f0;
+}
+
+body.light-mode .contact-container {
+    background: #ffffff;
+    border-color: #cbd5e1;
+}
+
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+    background: #f8fafc;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+/* ── Sticky Navbar ── */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #111827;
+    transition: box-shadow 0.3s;
+}
+
+nav.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.light-mode nav.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Active Nav Link ── */
+nav a.active {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 3px;
+}
+
+/* ── Nav fix (content nav ke neeche na jaye) ── */
+body {
+    padding-top: 80px;
+}
+.success-msg {
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid #2563eb;
+    color: #60a5fa;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+/* Resume button */
+.btn-resume {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    background: transparent;
+    color: #60a5fa;
+    border: 2px solid #2563eb;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-resume:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* Hero buttons fix — anchor tags ko button jaisa dikhao */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Nav Resume link highlight */
+nav a[download] {
+    color: #60a5fa;
+    border: 1px solid #2563eb;
+    padding: 6px 14px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+nav a[download]:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* Light mode */
+body.light-mode .btn-resume {
+    color: #2563eb;
+}
+
+body.light-mode nav a[download] {
+    color: #2563eb;
+}
+/* ── Scroll Animations ── */
+.animate-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero text left se aaye */
+.hero-text.animate-hidden {
+    transform: translateX(-30px);
+}
+
+.hero-text.animate-in {
+    transform: translateX(0);
+}
+
+/* Hero image right se aaye */
+.hero-image.animate-hidden {
+    transform: translateX(30px);
+}
+
+.hero-image.animate-in {
+    transform: translateX(0);
+}
+
+/* Reduced motion respect karo */
+@media (prefers-reduced-motion: reduce) {
+    .animate-hidden {
+        opacity: 1;
+        transform: none;
+    }
+}

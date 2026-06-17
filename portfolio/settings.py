@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-(eebsj(!g%e!0!0h5enk@kw#0+uo&^y4vyv-09x$wrj%*75!kk
 # SECURITY WARNING: don't run with debug turned on in production!
 import os
 DEBUG = False
-ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ketul-sadat-portfolio-production.up.railway.app',
+    '127.0.0.1',
+    'localhost',
+]
+#ALLOWED_HOSTS = []
 
 
 # Application definition
