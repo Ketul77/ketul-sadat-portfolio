@@ -100,9 +100,7 @@ const typingEl = document.getElementById('typing');
 
 function type() {
     if (!typingEl) return;
-
     const currentText = texts[textIndex];
-
     if (isDeleting) {
         typingEl.textContent = currentText.substring(0, charIndex - 1);
         charIndex--;
@@ -110,9 +108,7 @@ function type() {
         typingEl.textContent = currentText.substring(0, charIndex + 1);
         charIndex++;
     }
-
     let speed = isDeleting ? 60 : 100;
-
     if (!isDeleting && charIndex === currentText.length) {
         speed = 1500;
         isDeleting = true;
@@ -121,7 +117,6 @@ function type() {
         textIndex = (textIndex + 1) % texts.length;
         speed = 300;
     }
-
     setTimeout(type, speed);
 }
 
