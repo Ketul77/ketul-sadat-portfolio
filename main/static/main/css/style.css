@@ -585,3 +585,140 @@ body.light-mode nav a[download] {
         transform: none;
     }
 }
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+
+    /* Nav */
+    nav {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav h2 {
+        font-size: 20px;
+    }
+
+    nav div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 13px;
+    }
+
+    /* Hero */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        margin: 100px auto 60px;
+        padding: 20px;
+        gap: 40px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* About */
+    .about {
+        margin: 60px auto;
+        padding: 20px;
+    }
+
+    /* Skills */
+    .skills {
+        margin: 60px auto;
+        padding: 0 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .skill-card {
+        padding: 16px 10px;
+    }
+
+    .skill-card img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .skill-card span {
+        font-size: 12px;
+    }
+
+    /* Projects */
+    .projects {
+        margin: 60px auto;
+        padding: 0 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact */
+    .contact {
+        padding: 60px 15px;
+    }
+
+    .contact-container {
+        padding: 25px 20px;
+    }
+
+    .contact-container h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 40px;
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    /* Section headings */
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ── Extra small phones ── */
+@media (max-width: 400px) {
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav div {
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+}
