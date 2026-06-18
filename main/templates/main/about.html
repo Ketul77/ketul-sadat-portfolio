@@ -1,0 +1,474 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Ketul Sadat</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <style>
+        /* ── About Page Specific Styles ── */
+
+        .about-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 2rem 80px;
+        }
+
+        /* ── Hero Banner ── */
+        .about-hero {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .about-photo {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .about-photo img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2563eb;
+            display: block;
+        }
+
+        .about-photo::after {
+            content: '🎧';
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            font-size: 1.5rem;
+            background: #111827;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-intro h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .about-intro h1 span {
+            color: #2563eb;
+        }
+
+        .about-intro .tagline {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .about-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #94a3b8;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .badge.blue { border-color: #2563eb; color: #60a5fa; }
+        .badge.green { border-color: #16a34a; color: #4ade80; }
+
+        /* ── Story Section ── */
+        .story-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #2563eb;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #1e293b;
+        }
+
+        .story-text {
+            font-size: 17px;
+            line-height: 1.85;
+            color: #cbd5e1;
+            max-width: 700px;
+        }
+
+        .story-text p {
+            margin-bottom: 1.25rem;
+        }
+
+        .story-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: white;
+            font-weight: 500;
+        }
+
+        /* ── Hobbies Grid ── */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 4rem;
+        }
+
+        .hobby-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .hobby-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-4px);
+        }
+
+        .hobby-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .hobby-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: white;
+        }
+
+        .hobby-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        /* ── Goals ── */
+        .goals-section {
+            margin-bottom: 4rem;
+        }
+
+        .goal-item {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            margin-bottom: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .goal-item:hover {
+            border-color: #2563eb;
+        }
+
+        .goal-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1e3a5f;
+            line-height: 1;
+            flex-shrink: 0;
+            width: 40px;
+        }
+
+        .goal-content h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: white;
+        }
+
+        .goal-content p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* ── Fun Fact ── */
+        .funfact-box {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border: 1px solid #2563eb;
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .funfact-box::before {
+            content: '💡';
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 5rem;
+            opacity: 0.07;
+        }
+
+        .funfact-box .label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #2563eb;
+            margin-bottom: 0.75rem;
+        }
+
+        .funfact-box p {
+            font-size: 18px;
+            color: #e2e8f0;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        .funfact-box p span {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        /* ── CTA ── */
+        .about-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .cta-btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .cta-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: #60a5fa;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 1px solid #2563eb;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .cta-btn-secondary:hover {
+            background: rgba(37,99,235,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* ── Light Mode ── */
+        body.light-mode .about-photo img { border-color: #2563eb; }
+        body.light-mode .badge { background: #f1f5f9; border-color: #e2e8f0; color: #475569; }
+        body.light-mode .badge.blue { color: #2563eb; border-color: #bfdbfe; }
+        body.light-mode .story-text { color: #475569; }
+        body.light-mode .highlight { color: #0f172a; }
+        body.light-mode .hobby-card { background: #f8fafc; border-color: #e2e8f0; }
+        body.light-mode .hobby-card h3 { color: #0f172a; }
+        body.light-mode .goal-item { background: #f8fafc; border-color: #e2e8f0; }
+        body.light-mode .goal-content h3 { color: #0f172a; }
+        body.light-mode .funfact-box { background: #f1f5f9; border-color: #2563eb; }
+        body.light-mode .funfact-box p { color: #0f172a; }
+
+        /* ── Mobile ── */
+        @media (max-width: 600px) {
+            .about-hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .about-badges { justify-content: center; }
+            .about-intro h1 { font-size: 1.8rem; }
+            .hobbies-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-cta { flex-direction: column; }
+            .cta-btn-primary, .cta-btn-secondary { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>KETUL SADAT</h2>
+    <div id="nav-links">
+        <a href="/">Home</a>
+        <a href="/about" class="active">About</a>
+        <a href="/#skills">Skills</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#contact">Contact</a>
+        <a href="{% static 'main/resume/ketul_sadat_resume.pdf' %}" download="Ketul_Sadat_Resume.pdf">Resume</a>
+    </div>
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <button id="theme-btn">🌙</button>
+</nav>
+
+<div class="about-page">
+
+    <!-- Hero -->
+    <div class="about-hero">
+        <div class="about-photo">
+            <img src="{% static 'main/images/ketul.jpg' %}" alt="Ketul Sadat">
+        </div>
+        <div class="about-intro">
+            <h1>Hey, I'm <span>Ketul</span> 👋</h1>
+            <p class="tagline">
+                Computer Engineer from GTU · Python Developer · DJ at weddings 🎧<br>
+                Building things by day, dropping beats by night.
+            </p>
+            <div class="about-badges">
+                <span class="badge blue">Open to work</span>
+                <span class="badge green">GTU Graduate</span>
+                <span class="badge">Ahmedabad, India</span>
+                <span class="badge">Python · Django</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Story -->
+    <div class="story-section">
+        <p class="section-label">My Story</p>
+        <div class="story-text">
+            <p>
+                I'm a <span class="highlight">Computer Engineering graduate from GTU</span> with a passion for building things — whether it's a Django web app or a killer playlist for a wedding crowd.
+            </p>
+            <p>
+                My journey into tech started with curiosity and a lot of late nights googling "why is my code not working." Today I work with <span class="highlight">Python, Django, React.js, and JavaScript</span> — and I'm always learning something new.
+            </p>
+            <p>
+                Right now I'm on a mission: <span class="highlight">land a solid job, save up, and build my own startup.</span> Big dreams, one step at a time.
+            </p>
+        </div>
+    </div>
+
+    <!-- Hobbies -->
+    <div class="goals-section">
+        <p class="section-label">What I Do When I'm Not Coding</p>
+    </div>
+    <div class="hobbies-grid">
+        <div class="hobby-card">
+            <span class="hobby-emoji">💻</span>
+            <h3>Coding</h3>
+            <p>Building side projects and exploring new tech stacks</p>
+        </div>
+        <div class="hobby-card">
+            <span class="hobby-emoji">🏏</span>
+            <h3>Cricket</h3>
+            <p>Die-hard fan — never miss a match</p>
+        </div>
+        <div class="hobby-card">
+            <span class="hobby-emoji">🎧</span>
+            <h3>DJ</h3>
+            <p>Playing at weddings & shaadi sessions — crowd goes wild!</p>
+        </div>
+        <div class="hobby-card">
+            <span class="hobby-emoji">🎵</span>
+            <h3>Music</h3>
+            <p>Always have earphones in — music is life</p>
+        </div>
+        <div class="hobby-card">
+            <span class="hobby-emoji">✈️</span>
+            <h3>Travel</h3>
+            <p>Exploring new places, new cultures, new food</p>
+        </div>
+    </div>
+
+    <!-- Goals -->
+    <div class="goals-section">
+        <p class="section-label">My Goals</p>
+        <div class="goal-item">
+            <div class="goal-number">01</div>
+            <div class="goal-content">
+                <h3>Get a Great Job 💼</h3>
+                <p>Land a role as a Python/Django developer where I can grow fast and contribute to real products.</p>
+            </div>
+        </div>
+        <div class="goal-item">
+            <div class="goal-number">02</div>
+            <div class="goal-content">
+                <h3>Build My Startup 🚀</h3>
+                <p>Save up, build a team, and launch my own product. The idea is brewing — watch this space!</p>
+            </div>
+        </div>
+        <div class="goal-item">
+            <div class="goal-number">03</div>
+            <div class="goal-content">
+                <h3>Keep Learning 📚</h3>
+                <p>Master new technologies, contribute to open source, and never stop growing as a developer.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fun Fact -->
+    <div class="funfact-box">
+        <p class="label">Fun Fact</p>
+        <p>
+            I have <span>way too much knowledge</span> stored in my head — tech, music, cricket stats, shaadi songs — and I'm still figuring out the best way to use all of it. 😄
+        </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="about-cta">
+        <a href="/#contact" class="cta-btn-primary">💬 Let's Talk</a>
+        <a href="{% static 'main/resume/ketul_sadat_resume.pdf' %}" download="Ketul_Sadat_Resume.pdf" class="cta-btn-secondary">📄 Download Resume</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Ketul Sadat. All Rights Reserved.</p>
+</footer>
+
+<script src="{% static 'main/js/main.js' %}"></script>
+</body>
+</html>
