@@ -1,10 +1,7 @@
 /* v2 */
 /* Force mobile nav */
-@media screen and (max-width: 768px) {
-    nav div {
-        display: none !important;
-    }
-    .hamburger {
+@media only screen and (max-width: 768px) {
+    button#hamburger {
         display: flex !important;
         flex-direction: column;
         gap: 5px;
@@ -13,15 +10,30 @@
         border: none;
         padding: 5px;
     }
-    .hamburger span {
-        display: block;
+    button#hamburger span {
+        display: block !important;
         width: 25px;
         height: 3px;
         background: white;
         border-radius: 2px;
     }
+    nav div#nav-links {
+        display: none !important;
+    }
+    nav div#nav-links.open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #111827;
+        padding: 20px;
+        gap: 15px;
+        border-bottom: 1px solid #333;
+        z-index: 999;
+    }
 }
-
 html{
     scroll-behavior: smooth;
 }
