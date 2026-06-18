@@ -927,11 +927,89 @@ body.light-mode nav a[download] {
         font-size: 1.8rem;
     }
 
-    footer {
-        margin-top: 40px;
-        padding: 15px;
-        font-size: 13px;
-    }
+   footer {
+    border-top: 1px solid #1e293b;
+    padding: 50px 20px 30px;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.footer-tagline {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.social-btn:hover {
+    border-color: #2563eb;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.social-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #334155;
+}
+
+/* Light mode */
+body.light-mode footer {
+    border-top-color: #e2e8f0;
+}
+
+body.light-mode .footer-name {
+    color: #0f172a;
+}
+
+body.light-mode .social-btn {
+    background: #f1f5f9;
+    border-color: #e2e8f0;
+    color: #475569;
+}
+
+body.light-mode .social-btn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
 }
 
 @media (max-width: 400px) {
