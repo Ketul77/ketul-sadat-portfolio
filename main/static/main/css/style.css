@@ -132,7 +132,7 @@ nav a{
     font-weight:500;
 }
 .about {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 100px auto;
     padding: 0 20px;
     text-align: center;
@@ -140,127 +140,132 @@ nav a{
 
 .about h2 {
     font-size: 2.5rem;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
-.about-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 3rem;
+.about-story {
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.about-story p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #cbd5e1;
+}
+
+.about-story strong {
+    color: white;
+}
+
+.about-section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #2563eb;
+    margin-bottom: 20px;
     text-align: left;
 }
 
-.about-photo-wrap {
-    position: relative;
-    flex-shrink: 0;
+/* Hobby Cards */
+.hobby-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 50px;
 }
 
-.about-photo-wrap img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #2563eb;
-    display: block;
+.hobby-card {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: border-color 0.3s, transform 0.3s;
 }
 
-.dj-badge {
-    position: absolute;
-    bottom: 8px;
-    right: -10px;
-    background: #1e293b;
-    border: 1px solid #2563eb;
-    border-radius: 20px;
-    padding: 4px 10px;
-    font-size: 12px;
-    color: #60a5fa;
-}
-
-.about-text {
-    font-size: 16px;
-    line-height: 1.85;
-    color: #cbd5e1;
-    margin-bottom: 1.5rem;
-}
-
-.about-text strong {
-    color: white;
-}
-
-.about-hobbies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 1.5rem;
-}
-
-.hobby-item {
-    background: #1e293b;
-    border: 1px solid #334155;
-    color: #94a3b8;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    transition: border-color 0.2s, color 0.2s;
-}
-
-.hobby-item:hover {
+.hobby-card:hover {
     border-color: #2563eb;
-    color: white;
+    transform: translateY(-4px);
 }
 
-.about-goals {
+.hobby-emoji {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hobby-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 6px;
+}
+
+.hobby-card p {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Goals */
+.goals-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 30px;
+    text-align: left;
 }
 
-.goal-row {
+.goal-card {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.25rem;
     background: #0f172a;
     border: 1px solid #1e293b;
-    border-radius: 12px;
-    padding: 14px 18px;
-    transition: border-color 0.2s;
+    border-radius: 14px;
+    padding: 18px 20px;
+    transition: border-color 0.3s;
 }
 
-.goal-row:hover {
+.goal-card:hover {
     border-color: #2563eb;
 }
 
 .goal-num {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 800;
     color: #1e3a5f;
     flex-shrink: 0;
     line-height: 1;
 }
 
-.goal-row strong {
+.goal-card strong {
     display: block;
     color: white;
     font-size: 15px;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
-.goal-row p {
+.goal-card p {
     color: #64748b;
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 0;
 }
 
+/* Fun Fact */
 .about-funfact {
     background: #0f172a;
     border: 1px solid #2563eb;
     border-radius: 12px;
-    padding: 14px 18px;
+    padding: 16px 20px;
     font-size: 14px;
     color: #94a3b8;
     line-height: 1.6;
+    text-align: left;
 }
 
 .about-funfact span {
@@ -269,24 +274,18 @@ nav a{
 }
 
 /* Light mode */
-body.light-mode .about-text { color: #475569; }
-body.light-mode .about-text strong { color: #0f172a; }
-body.light-mode .hobby-item { background: #f1f5f9; border-color: #e2e8f0; color: #475569; }
-body.light-mode .goal-row { background: #f8fafc; border-color: #e2e8f0; }
-body.light-mode .goal-row strong { color: #0f172a; }
+body.light-mode .about-story p { color: #475569; }
+body.light-mode .about-story strong { color: #0f172a; }
+body.light-mode .hobby-card { background: #f8fafc; border-color: #e2e8f0; }
+body.light-mode .hobby-card h3 { color: #0f172a; }
+body.light-mode .goal-card { background: #f8fafc; border-color: #e2e8f0; }
+body.light-mode .goal-card strong { color: #0f172a; }
 body.light-mode .about-funfact { background: #f8fafc; color: #475569; }
 
 /* Mobile */
 @media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .about-hobbies { justify-content: center; }
-    .about-photo-wrap img {
-        width: 160px;
-        height: 160px;
+    .hobby-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
