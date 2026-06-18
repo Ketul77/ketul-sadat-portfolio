@@ -75,3 +75,18 @@ animateElements.forEach((el, index) => {
     el.classList.add('animate-hidden');
     observer.observe(el);
 });
+
+// ── Hamburger Menu ──
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+});
+
+// Link click pe menu band ho
+document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+    });
+});
