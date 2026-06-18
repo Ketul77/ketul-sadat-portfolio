@@ -2,7 +2,6 @@
 const themeBtn = document.getElementById('theme-btn');
 const body = document.body;
 
-// Page load pe saved theme lagao
 if (localStorage.getItem('theme') === 'light') {
     body.classList.add('light-mode');
     themeBtn.textContent = '☀️';
@@ -22,18 +21,15 @@ themeBtn.addEventListener('click', () => {
 // ── Sticky Navbar + Active Section Highlight ──
 const nav = document.querySelector('nav');
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
+const allNavLinks = document.querySelectorAll('nav a'); // ← naam badla
 
 window.addEventListener('scroll', () => {
-
-    // Sticky shadow
     if (window.scrollY > 20) {
         nav.classList.add('scrolled');
     } else {
         nav.classList.remove('scrolled');
     }
 
-    // Active link highlight
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 100;
@@ -42,7 +38,7 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    navLinks.forEach(link => {
+    allNavLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
             link.classList.add('active');
@@ -65,7 +61,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Yeh sab animate honge
 const animateElements = document.querySelectorAll(
     '.skill-card, .project-card, .about p, .hero-text, .hero-image, .contact-container'
 );
@@ -78,15 +73,14 @@ animateElements.forEach((el, index) => {
 
 // ── Hamburger Menu ──
 const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+const navMenu = document.getElementById('nav-links'); // ← naam badla
 
 hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+    navMenu.classList.toggle('open');
 });
 
-// Link click pe menu band ho
 document.querySelectorAll('#nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
+        navMenu.classList.remove('open');
     });
 });
