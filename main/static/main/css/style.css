@@ -145,18 +145,35 @@ nav a{
 
 .about-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 3rem;
     text-align: left;
 }
 
-.about-photo img {
-    width: 220px;
-    height: 220px;
+.about-photo-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.about-photo-wrap img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #2563eb;
-    flex-shrink: 0;
+    display: block;
+}
+
+.dj-badge {
+    position: absolute;
+    bottom: 8px;
+    right: -10px;
+    background: #1e293b;
+    border: 1px solid #2563eb;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: #60a5fa;
 }
 
 .about-text {
@@ -184,12 +201,56 @@ nav a{
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 13px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, color 0.2s;
 }
 
 .hobby-item:hover {
     border-color: #2563eb;
     color: white;
+}
+
+.about-goals {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.goal-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 14px 18px;
+    transition: border-color 0.2s;
+}
+
+.goal-row:hover {
+    border-color: #2563eb;
+}
+
+.goal-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e3a5f;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.goal-row strong {
+    display: block;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.goal-row p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
 }
 
 .about-funfact {
@@ -208,23 +269,25 @@ nav a{
 }
 
 /* Light mode */
-body.light-mode .about-text {
-    color: #475569;
-}
+body.light-mode .about-text { color: #475569; }
+body.light-mode .about-text strong { color: #0f172a; }
+body.light-mode .hobby-item { background: #f1f5f9; border-color: #e2e8f0; color: #475569; }
+body.light-mode .goal-row { background: #f8fafc; border-color: #e2e8f0; }
+body.light-mode .goal-row strong { color: #0f172a; }
+body.light-mode .about-funfact { background: #f8fafc; color: #475569; }
 
-body.light-mode .about-text strong {
-    color: #0f172a;
-}
-
-body.light-mode .hobby-item {
-    background: #f1f5f9;
-    border-color: #e2e8f0;
-    color: #475569;
-}
-
-body.light-mode .about-funfact {
-    background: #f8fafc;
-    color: #475569;
+/* Mobile */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .about-hobbies { justify-content: center; }
+    .about-photo-wrap img {
+        width: 160px;
+        height: 160px;
+    }
 }
 
 /* Mobile */
