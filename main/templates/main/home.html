@@ -29,8 +29,8 @@
 
 <section id="home" class="hero">
     <div class="hero-text">
-        <h1>Hi, I'm Ketul 👋</h1>
-        <h3>Computer Engineer | Python Developer</h3>
+        <h1 class="hero-title">Hi, I'm <span class="gradient-text">Ketul</span> 👋</h1>
+        <h3>I'm a <span class="typing-text" id="typing"></span><span class="typing-cursor">|</span></h3>
         <p>Passionate about Python, Django, Web Development and Problem Solving.</p>
        <div class="hero-buttons">
     <a href="#projects" class="btn-primary">View Projects</a>
@@ -190,6 +190,28 @@
 .footer-tagline { font-size: 14px; color: #64748b; margin-bottom: 30px; }
 .footer-copy { font-size: 13px; color: #334155; }
 footer { border-top: 1px solid #1e293b; padding: 50px 20px 30px; margin-top: 80px; text-align: center; }
+.gradient-text {
+    background: linear-gradient(135deg, #2563eb, #7c3aed, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.typing-text {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.typing-cursor {
+    color: #2563eb;
+    animation: blink 0.7s infinite;
+    font-weight: 300;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
 </style>
     <div class="footer-content">
         <p class="footer-name">Ketul Sadat</p>

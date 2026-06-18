@@ -84,3 +84,45 @@ document.querySelectorAll('#nav-links a').forEach(link => {
         navMenu.classList.remove('open');
     });
 });
+// ── Typing Animation ──
+const texts = [
+    'Python Developer',
+    'Django Developer',
+    'React.js Developer',
+    'Web Developer',
+    'DJ at Weddings 🎧'
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingEl = document.getElementById('typing');
+
+function type() {
+    if (!typingEl) return;
+
+    const currentText = texts[textIndex];
+
+    if (isDeleting) {
+        typingEl.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingEl.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let speed = isDeleting ? 60 : 100;
+
+    if (!isDeleting && charIndex === currentText.length) {
+        speed = 1500;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        speed = 300;
+    }
+
+    setTimeout(type, speed);
+}
+
+type();
