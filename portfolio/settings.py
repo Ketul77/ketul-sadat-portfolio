@@ -27,6 +27,7 @@ import os
 DEBUG = False
 ALLOWED_HOSTS = [
     'ketul-sadat-portfolio-production.up.railway.app',
+    'ketulcodes.up.railway.app',
     '127.0.0.1',
     'localhost',
 ]
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 ]
 CSRF_TRUSTED_ORIGINS = [
     'https://ketul-sadat-portfolio-production.up.railway.app',
+    'https://ketulcodes.up.railway.app',
 ]
 
 MIDDLEWARE = [
