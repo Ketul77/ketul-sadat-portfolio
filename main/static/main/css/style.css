@@ -131,23 +131,115 @@ nav a{
     margin-left:25px;
     font-weight:500;
 }
-.about{
-    max-width:800px;
-    margin:150px auto;
-    text-align:center;
-    padding:20px;
+.about {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
 }
 
-.about h2{
-    margin-bottom: 20px;
-    font-size: 2rem;
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
 }
 
-.about p{
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.8;
-    font-size: 18px;
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    text-align: left;
+}
+
+.about-photo img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2563eb;
+    flex-shrink: 0;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+    color: white;
+}
+
+.about-hobbies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.hobby-item {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    transition: border-color 0.2s;
+}
+
+.hobby-item:hover {
+    border-color: #2563eb;
+    color: white;
+}
+
+.about-funfact {
+    background: #0f172a;
+    border: 1px solid #2563eb;
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.about-funfact span {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+/* Light mode */
+body.light-mode .about-text {
+    color: #475569;
+}
+
+body.light-mode .about-text strong {
+    color: #0f172a;
+}
+
+body.light-mode .hobby-item {
+    background: #f1f5f9;
+    border-color: #e2e8f0;
+    color: #475569;
+}
+
+body.light-mode .about-funfact {
+    background: #f8fafc;
+    color: #475569;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-hobbies {
+        justify-content: center;
+    }
+    .about-photo img {
+        width: 160px;
+        height: 160px;
+    }
 }
 .skills {
     text-align: center;
