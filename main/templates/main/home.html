@@ -55,6 +55,18 @@ body.light-mode nav #nav-links.open {
 }
 </style>
 </head>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerBtn = document.getElementById('hamburger');
+    const navLinksMenu = document.getElementById('nav-links');
+
+    if (hamburgerBtn && navLinksMenu) {
+        hamburgerBtn.addEventListener('click', function() {
+            navLinksMenu.classList.toggle('open');
+        });
+    }
+});
+</script>
 <body>
 
 <nav>
