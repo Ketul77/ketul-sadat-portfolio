@@ -71,6 +71,189 @@ body.light-mode nav #nav-links.open {
         text-align: center !important;
     }
 }   
+
+  /* ═══════════════════════════════ */
+/* PROFESSIONAL MOBILE REDESIGN    */
+/* ═══════════════════════════════ */
+@media screen and (max-width: 768px) {
+
+    body {
+        padding-top: 70px !important;
+    }
+
+    /* ── Nav ── */
+    nav {
+        padding: 14px 20px !important;
+        background: rgba(10, 14, 26, 0.95) !important;
+        backdrop-filter: blur(10px);
+    }
+
+    nav h2 {
+        font-size: 19px !important;
+        letter-spacing: 0.5px;
+    }
+
+    #theme-btn {
+        padding: 6px 10px !important;
+        font-size: 16px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+        margin: 30px auto 50px !important;
+        padding: 0 24px !important;
+        gap: 28px !important;
+    }
+
+    .hero-image img {
+        width: 150px !important;
+        height: 150px !important;
+        border: 3px solid #2563eb !important;
+    }
+
+    .hero-text h1 {
+        font-size: 2.1rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .hero-text h3 {
+        font-size: 1.05rem !important;
+        margin-bottom: 14px !important;
+        min-height: 28px;
+    }
+
+    .hero-text p {
+        font-size: 14.5px !important;
+        color: #94a3b8 !important;
+        margin-bottom: 24px !important;
+        padding: 0 8px;
+    }
+
+    .hero-buttons {
+        flex-direction: column !important;
+        width: 100%;
+        gap: 10px !important;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        padding: 14px !important;
+        font-size: 15px !important;
+        border-radius: 12px !important;
+    }
+
+    /* ── Section Headings ── */
+    section h2 {
+        font-size: 1.7rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .skills-sub, .projects-sub {
+        font-size: 13px !important;
+        margin-bottom: 28px !important;
+    }
+
+    section {
+        margin-top: 60px !important;
+        padding: 0 20px !important;
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .skill-card {
+        padding: 16px 8px !important;
+        border-radius: 14px !important;
+        gap: 8px !important;
+    }
+
+    .skill-card img {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .skill-card span {
+        font-size: 11px !important;
+    }
+
+    /* ── Projects ── */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+
+    .project-card {
+        padding: 20px !important;
+        border-radius: 16px !important;
+    }
+
+    .project-card h3 {
+        font-size: 1rem !important;
+    }
+
+    .project-card p {
+        font-size: 13px !important;
+    }
+
+    /* ── Contact ── */
+    .contact {
+        padding: 0 0 60px !important;
+    }
+
+    .contact-container {
+        padding: 28px 20px !important;
+        border-radius: 18px !important;
+        margin: 0 4px;
+    }
+
+    .contact-container h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .contact-container p {
+        font-size: 13.5px !important;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 13px !important;
+        font-size: 14px !important;
+        border-radius: 10px !important;
+    }
+
+    .contact-form button {
+        padding: 14px !important;
+        font-size: 15px !important;
+        border-radius: 10px !important;
+    }
+
+    /* ── Footer ── */
+    footer {
+        padding: 36px 20px 24px !important;
+        margin-top: 50px !important;
+    }
+
+    .footer-social {
+        gap: 8px !important;
+    }
+
+    .social-btn {
+        padding: 9px 14px !important;
+        font-size: 13px !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .hero-text h1 {
+        font-size: 1.8rem !important;
+    }
+}
 </style>
 </head>
 <script>
