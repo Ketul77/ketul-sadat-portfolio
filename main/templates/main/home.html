@@ -6,6 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ketul Sadat — Portfolio</title>
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <style>
+/* Hamburger - Final Fix */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    nav #nav-links {
+        display: none;
+    }
+
+    nav #nav-links.open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #111827;
+        padding: 20px;
+        gap: 15px;
+        border-bottom: 1px solid #333;
+        z-index: 999;
+    }
+
+    .hamburger {
+        display: flex !important;
+    }
+}
+
+body.light-mode nav #nav-links.open {
+    background: #ffffff;
+}
+</style>
 </head>
 <body>
 
