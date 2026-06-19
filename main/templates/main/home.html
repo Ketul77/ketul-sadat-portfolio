@@ -53,6 +53,24 @@
 body.light-mode nav #nav-links.open {
     background: #ffffff;
 }
+@media screen and (max-width: 768px) {
+    nav #nav-links.open {
+        background: #0a0e1a !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+}
+@media screen and (max-width: 768px) {
+    .hero-image img {
+        width: 200px !important;
+        height: 200px !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+    }
+    .hero {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+}   
 </style>
 </head>
 <script>
